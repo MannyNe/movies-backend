@@ -5,7 +5,6 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { MoviesModule } from './movies/movies.module';
-import { ProfileModule } from './profile/profile.module';
 import { DatabaseModule } from './database/database.module';
 
 @Module({
@@ -16,7 +15,6 @@ import { DatabaseModule } from './database/database.module';
     AuthModule,
     UserModule,
     MoviesModule,
-    ProfileModule,
     DatabaseModule,
   ],
   controllers: [AppController],

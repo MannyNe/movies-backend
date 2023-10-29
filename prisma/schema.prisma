@@ -25,7 +25,8 @@ model Profile {
   first_name String
   last_name  String
   bio        String?
-  user       User       @relation(fields: [id], references: [id])
+  userId     String     @unique
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
   bookmarks  Bookmark[]
   created_at DateTime   @default(now())
   updated_at DateTime   @default(now())
@@ -36,7 +37,8 @@ model Bookmark {
   name        String
   description String
   poster      String
-  profile     Profile  @relation(fields: [id], references: [id])
+  profileId   String
+  profile     Profile  @relation(fields: [profileId], references: [id])
   created_at  DateTime @default(now())
   updated_at  DateTime @default(now())
 }
